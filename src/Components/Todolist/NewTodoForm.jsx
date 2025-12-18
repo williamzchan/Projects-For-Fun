@@ -1,4 +1,5 @@
 import { useState } from "react"
+import styles from "./Todolist.module.css"
 
 export function NewTodoForm({ onSubmit }) {
     const [newItem, setNewItem] = useState("")
@@ -13,8 +14,8 @@ export function NewTodoForm({ onSubmit }) {
     }
   
     return (
-      <form onSubmit={handleSubmit} className="new-item-form">
-        <div className="form-row">
+      <form onSubmit={handleSubmit} className={styles["new-item-form"]}>
+        <div className={styles["form-row"]}>
           <label htmlFor="item">New Item</label>
           <input
             value={newItem}
@@ -23,7 +24,7 @@ export function NewTodoForm({ onSubmit }) {
             id="item"
           />
         </div>
-        <button className="btn">Add</button>
+        <button className={styles["btn"]}>Add</button>
       </form>
     )
   }

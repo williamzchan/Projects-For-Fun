@@ -1,7 +1,7 @@
 
 //async await vs fetch.then https://dev.to/paperbyte/async-await-vs-fetchthen-20oe
 import { useRef, useState } from 'react';
-import Style from './Pokecall.module.css'
+import styles from './Pokecall.module.css'
 
 export default function Pokecall() {
   const inputRef = useRef(null);
@@ -31,16 +31,16 @@ export default function Pokecall() {
   }
 
   return (
-    <div className={Style.container}>
-      <input type="text" ref={inputRef} placeholder="Enter Pokémon Name" />
-      <button onClick={fetchData}>Fetch Pokémon</button>
+    <div className={styles.container}>
+      <input type="text" ref={inputRef} className={styles["input"]} placeholder="Enter Pokémon Name" />
+      <button onClick={fetchData} className={styles.btn}>Fetch Pokémon</button>
       {error && <p style={{ color: 'red' }}>{error}</p>}
-      <div className={Style.spriteBox}>
+      <div className={styles.spriteBox}>
 
         <img
             ref={imageRef}
             alt="Pokémon"
-            style={{ display: 'none', marginTop: '1rem' }}
+            style={{ display: 'none', marginTop: '1rem', height: '10rem', width: '10rem' }}
         />
       </div>
     </div>
